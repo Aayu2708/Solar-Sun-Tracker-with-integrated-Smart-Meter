@@ -1,0 +1,17 @@
+Hardware Requirements and analysis
+To ensures efficient operation, accurate sensing, and reliable power management. Each hardware component plays a crucial role in the proper functioning of the system, 
+with specific electrical considerations taken into account for safety, stability, and precision.At the core of the system lies the ESP32 microcontroller,
+which serves as the central processing unit. Since the ESP32 operates at a regulated 5V input, a DC-DC buck converter (such as the LM2596) is employed to step down the 12V output from the battery to a stable 5V supply. This regulated voltage powers both the ESP32 and the logic circuitry of the L298N motor driver. The use of a buck converter ensures efficient power conversion with minimal heat dissipation and voltage fluctuations, thereby protecting the microcontroller from overvoltage damage.
+To measure electrical parameters, a voltage sensing circuit is integrated using a resistive voltage divider. This circuit scales down the higher panel or 
+battery voltages (typically up to 30V) to the safe 0–3.3V range compatible with the ESP32’s analog-to-digital converter (ADC) pins. Proper calibration of t
+his divider network is essential to maintain measurement accuracy and account for any tolerance variations in the resistors used. This allows the system to accurately monitor the voltage levels of both the solar panel and the battery in real time.For current measurement, the system employs a Hall-effect based current sensor (ACS712). The analog output from the ACS712 corresponds to the current passing through the load or panel and is fed into the ESP32’s ADC input. Before use, a calibration routine is carried out to determine the zero-current offset voltage and sensor sensitivity (in mV/A), ensuring precise readings. This data is then utilized by the ESP32 to calculate instantaneous power and total energy generation.
+The motor control subsystem is implemented using an L298N dual H-bridge motor driver, which enables the ESP32 to drive the 12V DC gear motor responsible
+for rotating the solar panel. The ESP32 provides two digital control signals to determine the direction of rotation and a PWM (Pulse Width Modulation) signal to regulate the motor speed. The motor’s power supply is drawn directly from the 12V battery to ensure adequate torque for panel movement, while the logic section of the L298N operates at the regulated 5V level from the buck converter. This configuration allows smooth and precise control of the solar tracking mechanism while maintaining system stability.
+
+IV. EXPERIMENTAL RESULTS AND ANALYSIS
+The experimental evaluation of the Sun Solar Tracker System with Smart Meter Integration was conducted to assess its performance in comparison to 
+a conventional fixed solar panel setup. The primary objective was to quantify the improvement in energy generation achieved through automatic sun
+tracking and to validate the accuracy of the integrated smart metering system.The experimental setup consisted of two identical solar panels: one
+configured as a fixed panel, positioned at the optimal seasonal tilt angle, and the other equipped with the automatic single-axis solar tracking system. 
+Both panels were exposed to the same environmental conditions over multiple test days to ensure fairness in comparison. The smart meter readings from the 
+ESP32-based monitoring system were cross-verified using a handheld digital multimeter and a clamp meter to ensure measurement reliability.
