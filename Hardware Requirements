@@ -8,6 +8,40 @@ his divider network is essential to maintain measurement accuracy and account fo
 The motor control subsystem is implemented using an L298N dual H-bridge motor driver, which enables the ESP32 to drive the 12V DC gear motor responsible
 for rotating the solar panel. The ESP32 provides two digital control signals to determine the direction of rotation and a PWM (Pulse Width Modulation) signal to regulate the motor speed. The motor’s power supply is drawn directly from the 12V battery to ensure adequate torque for panel movement, while the logic section of the L298N operates at the regulated 5V level from the buck converter. This configuration allows smooth and precise control of the solar tracking mechanism while maintaining system stability.
 
+
+Hardware Requirements
+
+ESP32 Microcontroller
+
+12V Solar Panel
+
+12V Rechargeable Battery
+
+DC-DC Buck Converter (LM2596)
+
+L298N Dual H-Bridge Motor Driver
+
+12V DC Gear Motor
+
+ACS712 Current Sensor
+
+Voltage Divider Circuit (Resistors)
+
+Light Dependent Resistors (LDRs)
+
+Diodes (for protection)
+
+Capacitors (filtering and stabilization)
+
+Connecting Wires
+
+Breadboard / PCB
+
+Mounting Frame for Solar Panel
+
+
+
+
 IV. EXPERIMENTAL RESULTS AND ANALYSIS
 The experimental evaluation of the Sun Solar Tracker System with Smart Meter Integration was conducted to assess its performance in comparison to 
 a conventional fixed solar panel setup. The primary objective was to quantify the improvement in energy generation achieved through automatic sun
