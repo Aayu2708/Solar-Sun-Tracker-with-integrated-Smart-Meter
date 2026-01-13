@@ -1,0 +1,12 @@
+SYSTEM ARCHITECTURE
+The Sun Solar Tracker System with Smart Meter Integration is designed around a three-layered architecture consisting of the Sensing Layer,
+Control/Processing Layer, and Communication/Display Layer. These layers work together seamlessly to achieve efficient solar tracking, intelligent energy management,
+and real-time data monitoring.At the foundation lies the Sensing Layer, which is responsible for gathering all the essential data required for decision-making. 
+The system uses a combination of voltage and current sensors to measure the electrical parameters of the solar panel, battery, and load. Additionally, Light Dependent Resistors (LDRs) are strategically placed
+to detect sunlight intensity and direction. These LDRs form the basis of the tracking mechanism, allowing the system to determine the position of the sun at any given time.The Control and Processing Layer
+is centered around the ESP32 microcontroller, which acts as the brain of the entire system. The ESP32 receives input signals from the sensors and processes them using embedded algorithms. The core logic inc
+ludes a tracking algorithm that continuously compares the light intensity values from multiple LDRs. When a significant difference between the readings of the left and right LDRs is detected, the controller
+activates the L298N motor driver module, which drives the gear motor to rotate the solar panel in the direction of the brighter LDR. This adjustment continues until the light readings balance, ensuring that
+the panel always faces the sun for maximum energy capture.
+ 
+Sensing-------------------->Control/Processing-------------------->Communication Display
